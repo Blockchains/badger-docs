@@ -13,15 +13,15 @@ The BASE token is governed by the Base DAO, an Aragon DAO with a transferrable g
 ## Apps
 BASE DAO uses the following Apps:
 
-- **Voting**: Used to create and participate in votes. Votes can be linked to an action, such as minting gBASE or transferring funds, or be purely informative.
+- **[Voting](https://github.com/aragon/aragon-apps/tree/master/apps/voting)**: Used to create and participate in votes. Votes can be linked to an action, such as minting gBASE or transferring funds, or be purely informative.
 
-- **Tokens**: Manages the supply and distribution of gBASE.
+- **[Tokens](https://github.com/aragon/aragon-apps/tree/master/apps/token-manager)**: Manages the supply and distribution of gBASE.
 
-- **Finance**: Manages the organization's financial assets, including ETH and ERC20s.
+- **[Finance](https://github.com/aragon/aragon-apps/tree/master/apps/finance)**: Manages the organization's financial assets, including ETH and ERC20s.
 
-- **Token Request**: Mint gBASE in exchange for payment. If the request is rejected, the user would receive their payment back and if it is approved the payment would be sent to the organization and new gBASE would be minted to the user.
+- **[Token Request](https://github.com/1Hive/token-request-app)**: Mint gBASE in exchange for payment. If the request is rejected, the user would receive their payment back and if it is approved the payment would be sent to the organization and new gBASE would be minted to the user.
 
-- **Agent**: Enables the organization to interact directly with any other smart contract on Ethereum. For example, adding liquidity to a Uniswap or Balancer pool.
+- **[Agent](https://github.com/aragon/aragon-apps/tree/master/apps/agent)**: Enables the organization to interact directly with any other smart contract on Ethereum. For example, adding liquidity to a Uniswap or Balancer pool.
 
 ## Voting
 
@@ -35,4 +35,6 @@ Agent votes can only be created through the Aragon App Console:
 - Example
   - `act/0x77df6ca4cc96d16edc7858cfc00f70fdc98bb027/0xe96c9851773ec7adcb6a155c7d4acf19a4ede7ae/vote(uint256: 10, bool: true, bool: false)`
 
-- [Documentation](https://github.com/aragon/aragon/blob/master/docs/CONSOLE.md#act)
+- Documentation
+  - [Console](https://github.com/aragon/aragon/blob/master/docs/CONSOLE.md#act)
+  - [Interacting with Aragon Agent](https://hack.aragon.org/docs/guides-use-agent#interacting-with-aragon-agent)
