@@ -29,6 +29,10 @@ Users can create and vote on Finance, Token, and Token Request votes through the
 
 Agent votes can only be created through the Aragon App Console:
 
-- Syntax: `act/agentAddress/contractAddress/method(type: value)`
-- Example: `act/0x77df6ca4cc96d16edc7858cfc00f70fdc98bb027/0xe96c9851773ec7adcb6a155c7d4acf19a4ede7ae/vote(uint256: 10, bool: true, bool: false)`
+- Syntax
+  - `act/agentAddress/contractAddress/method(type: value)`
+
+- Example
+  - `act/0x77df6ca4cc96d16edc7858cfc00f70fdc98bb027/0xe96c9851773ec7adcb6a155c7d4acf19a4ede7ae/vote(uint256: 10, bool: true, bool: false)`
+
 - [Documentation](https://github.com/aragon/aragon/blob/master/docs/CONSOLE.md#act)
