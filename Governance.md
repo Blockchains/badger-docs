@@ -25,9 +25,11 @@ BASE DAO uses the following Apps:
 
 ## Voting
 
-Users can create and vote on Finance, Token, and Token Request votes through the Aragon App Panel.
+### App Panel
+Users can create Finance, Token, and Token Request votes through the Aragon App Panel.
 
-Agent votes can only be created through the Aragon App Console:
+### Console
+Agent votes can only be created through the Aragon Console:
 
 - Syntax
   - `act/agentAddress/contractAddress/method(type: value)`
@@ -38,3 +40,18 @@ Agent votes can only be created through the Aragon App Console:
 - Documentation
   - [Console](https://github.com/aragon/aragon/blob/master/docs/CONSOLE.md#act)
   - [Interacting with Aragon Agent](https://hack.aragon.org/docs/guides-use-agent#interacting-with-aragon-agent)
+ 
+ Some useful commands:
+ 
+ - Adding BASE/ETH liquidity to Uniswap: `TODO`
+ 
+ - Adding gBASE to the Geyser: `TODO`
+ 
+ - Governing the BASE token contract: `TODO`
+ 
+ 
+## Responsbilities
+
+The BASE DAO will initially hold the entire BASE token supply. 
+BASE DAO
+
