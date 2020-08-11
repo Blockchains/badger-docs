@@ -43,10 +43,23 @@ Agent votes can only be created through the Aragon Console:
  
  Some useful commands:
  
- - Adding BASE/ETH liquidity to Uniswap: `TODO`
+Adding BASE/ETH liquidity to Uniswap: 
+ - Contract: UniswapV2Router
+   - `function addLiquidityETH(
+        address token,
+        uint amountTokenDesired,
+        uint amountTokenMin,
+        uint amountETHMin,
+        address to,
+        uint deadline
+    )`
+    - `{Aragon Command}`
  
- - Adding gBASE to the Geyser: `TODO`
- 
+Adding gBASE to the Geyser:
+  - Contract: TokenGeyser
+    - `function lockTokens(uint256 amount, uint256 durationSec)`
+    - `{Aragon Command}`
+
  - Governing the BASE token contract: `TODO`
  
  
