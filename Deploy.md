@@ -56,8 +56,6 @@ Initial oracles will be centralized, with Chainlink integration hopefully down t
 #### Allow contributors to request gBase
 Using the TokenRequestApp of the DAO, contributors can request gBase tokens for ETH. This ETH will be used to seed initial liquidity in the Uniswap Pool, along with the BASE tokens.
 
-(Note: Ensure ETH goes to the DAO Finance app)
-
 #### Deploy Liquidity
 Send the LP tokens back to the individual contributors pro-rata via proposals, rather than stake it in Geyser directly. Contributors can then stake their LP tokens to farm gBase individually.
 
