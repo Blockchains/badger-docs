@@ -46,12 +46,12 @@ This will deploy the Token Geyser. The stakingToken will be the Uniswap LP token
 
 
 ## Bringing Users into the system
-The system is 'live' once BASE and WETH are added to the uniswap pool. At that point, anyone can buy BASE tokens and stake the LP tokens in the Geyser to farm gBase.
+The Rebase system is 'live' once BASE and WETH are added to the uniswap pool. At that point, anyone can buy BASE tokens and stake the LP tokens in the Geyser to farm gBase.
 
-Before this happens, a few things should be configured
+Before this happens, a few things should be configured:
 
 #### Configure Oracles w/ Data sources
-Initial oracles will be centralized, with Chainlink integration hopefully down the line.
+Initial oracles will be centralized, with Chainlink integration tbd down the line.
 
 #### Allow contributors to request gBase
 Using the TokenRequestApp of the DAO, contributors can request gBase tokens for ETH. This ETH will be used to seed initial liquidity in the Uniswap Pool, along with the BASE tokens.
