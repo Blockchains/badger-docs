@@ -18,5 +18,5 @@ The Geyser is not upgradable, this is the intent of the system - it's a promise 
 However, given that the token itself & rest of the system can be changed it does not actually provide any decentralization guarentee.
 
 Full upgradability could be added by implementing OZ proxy + logic split w/ DAO ownership. This would invalidate the audited status of the contract.
-* Inhereit Initializable
+* Inherit Initializable
 * constructor() -> initialize()
