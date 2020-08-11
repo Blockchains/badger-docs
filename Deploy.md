@@ -61,4 +61,5 @@ Using the TokenRequestApp of the DAO, contributors can request gBase tokens for 
 #### Deploy Liquidity
 Send the LP tokens back to the individual contributors pro-rata via proposals, rather than stake it in Geyser directly. Contributors can then stake their LP tokens to farm gBase individually.
 
-
+## Final Checks
+Ensure the ProxyAdmin for the upgradable contracts (BaseToken, SupplyPolicy) belongs to the DAO Agent!
