@@ -42,7 +42,7 @@ Use the **UniswapV2Factory** to create a WETH-BASE Pair. The created UniswapV2Pa
 
 #### Deploy Geyser using deployGeyser() script
 This will deploy the Token Geyser. The stakingToken will be the Uniswap LP token, the distributed token will be the gBase Token (governance token of DAO). The rest of the parameters will come from the config.
-
+ 
 #### Test the geyser parameters using confirmGeyserParams() script
 
 
@@ -59,6 +59,8 @@ Using the TokenRequestApp of the DAO, contributors can request gBase tokens for 
 
 #### Deploy Liquidity
 Send the LP tokens back to the individual contributors pro-rata via proposals, rather than stake it in Geyser directly. Contributors can then stake their LP tokens to farm gBase individually.
+
+Ensure the Pool has no liquidity before the initial deposit. This is impossible if you sent all the $BASE tokens directly to the **DAO Finance**
 
 ## Final Checks
 Ensure the ProxyAdmin for the upgradable contracts (BaseToken, SupplyPolicy) belongs to the DAO Agent!
