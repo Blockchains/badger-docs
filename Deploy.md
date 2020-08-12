@@ -30,7 +30,8 @@ This will deploy the...
 And configure these contracts & the SupplyPolicy The MarketMedianOracle will have no data source initially.
 
 #### Run the tranferOwnership() script
-This will transfer ownership of all contracts from the **Deployer** to the **DAO Agent**. All the $BASE tokens will be given to the **DAO Finance**.
+This will transfer ownership of all contracts from the **Deployer** to the **DAO Agent**. 
+- Transfer all $BASE tokens to the **DAO Finance** before transferring ownership
 
 #### Test the parameters using confirmRebaseParams() script
 This will ensure all parameters of the system are what we expect so far
