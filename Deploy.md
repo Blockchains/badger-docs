@@ -49,7 +49,10 @@ This will deploy the Token Geyser. The stakingToken will be the Uniswap LP token
 ## Bringing Users into the system
 The Rebase system is 'live' once BASE and WETH are added to the uniswap pool. At that point, anyone can buy BASE tokens and stake the LP tokens in the Geyser to farm gBase.
 
+Transfer all BASE Tokens from Finance App to Agent
+
 Before this happens, a few things should be configured:
+
 
 #### Configure Oracles w/ Data sources
 Initial oracles will be centralized, with Chainlink integration tbd down the line.
