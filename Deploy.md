@@ -75,7 +75,7 @@ The Deployer will deposit all BASE tokens to the DAO Finance App through the Ara
 Using the TokenRequestApp of the DAO, contributors can request gBase tokens, and optionally offer ETH for this request. This ETH will be used to seed initial liquidity in the Uniswap Pool, along with the BASE tokens.
 
 #### Deploy Liquidity
-Use the DAO Agent console to put ETH & BASE into the Uniswap Pool.
+Use the DAO Agent console to put ETH & BASE into the Uniswap Pool. Ensure the Pool has no liquidity before the initial deposit. This is impossible if you sent all the $BASE tokens directly to the **DAO Finance**
 
 ##### Approve Uniswap Router to use BASE tokens.
 ```
@@ -101,6 +101,7 @@ Unfortunately the DAO cannot change it's voting period after Deploy.
 
 #### Run the tranferOwnership() script
 This will transfer ownership of all contracts from the **Deployer** to the **DAO Agent**.
+
 
 ## Final Checks
 Send the ProxyAdmin for the upgradable contracts (BaseToken, SupplyPolicy) to the DAO Agent!
