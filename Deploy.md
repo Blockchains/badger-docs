@@ -6,60 +6,106 @@ This is an EOA that handles the initial deploys and wiring up of the system, usi
 This is the DAO contract that interacts with other contracts. It is the 'avatar' of the DAO to the outside Ethereum world. It will be the owner of the system.
 
 #### DAOFinance 💵
-This is the DAO contract that handles financial transactions of ETH and ERC20s. All of the initial BASE tokens are given to this address.
-
+This is the DAO contract that handles financial transactions of ETH and ERC20s. All of the BASE tokens are initially given to this address.
 
 ## Deploy Core
-#### Prepare the config for deployment script
-This will specify the initial parameters of the system
+The deployment script currently involves some manual phases and some automated parts for speed of development, subject to further automation.
 
-#### Deploy DAO via Aragon UI
+#### Manual step: Deploy DAO 
 
-#### Deploy BaseToken & SupplyPolicy via OZ CLI from ampl/uFragments repo
+via Aragon UI:
+[Rinkeby](https://rinkeby.aragon.org/#/)
+[Mainnet](https://aragon.org/#/)
+
+Or Aragon console
+
+- Determine how many gBase should be distributed total (21,000,000 total for early contributors + Geyser)
+- Subtract the early contributor distribution from the total, mint this gBase to the Deployer initially. The majority of this will be sent to the Geyser.
+- Minimum voting threshold should be 10%
+
+>⚠️ Note that once the Deployer no longer controls >50% of the voting rights, actions cannot be taken immediately and must wait for the DAO voting period (1 week)
+
+Take note of the addresses of the Agent app, Finance app, and governance token.
+
+#### Manual step: Deploy BaseToken & SupplyPolicy via OZ CLI
 - Before deploy, ensure the proper token name and symbol are set in contract (They are hardcoded)
-- Initialize BaseToken to the deployer address
 - Do not initialize SupplyPolicy, it will be taken care of by deploy script
 
-#### Run deploySystem() script
+Add these contract addresses to the config.ts file.
+
+#### Manual step: Deploy RebaseBtcBaseOracle
+Deploy a Gnosis Multisig on Rinkeby w/ desired keys.
+Add these contract addresses to config.
+
+
+### Run deploySystem() script
+Note that everywhere the script is involved, those actions could also be taken manually if desired
+
+#### Core System
 This will deploy the...
+- BaseToken
+- SupplyPolicy
 - Orchestrator
 - MarketMedianOracle
 - CpiMedianOracle
 - ConstantOracle
+- Centralized Market Oracle
+    - (This oracle is a Gnosis multisig, and will be operated pro-bono by trusted early adopters.)
 
-And configure these contracts & the SupplyPolicy The MarketMedianOracle will have no data source initially.
+Once the system is deployed, the deployed.json file will be updated with the contract addresses (rinkeby.json for rinkeby).
+After deployment, it will then configure these contracts according to the config.
 
-#### Run the tranferOwnership() script
-This will transfer ownership of all contracts from the **Deployer** to the **DAO Agent**. All the $BASE tokens will be given to the **DAO Finance**.
+- Initialize BaseToken to the deployer address
+- Initialize SupplyPolicy (owned by deployer address, managing supply for BaseToken)
+
+#### Pool & Geyser
+Uses the **UniswapV2Factory** to create a WETH-BASE Pair. The created UniswapV2Pair contract is *also* the LP token.
 
 #### Test the parameters using confirmRebaseParams() script
-This will ensure all parameters of the system are what we expect so far
+We're ready to go:
+This will ensure all parameters of the system are what we expect
+The geyser parameters will be tested using confirmGeyserParams() function
 
-## Deploy Pools
-#### Deploy Uniswap Pool
-Use the **UniswapV2Factory** to create a WETH-BASE Pair. The created UniswapV2Pair contract is *also* the LP token.
+## Manual DAO Actions: Bringing Users into the system
 
-#### Deploy Geyser using deployGeyser() script
-This will deploy the Token Geyser. The stakingToken will be the Uniswap LP token, the distributed token will be the gBase Token (governance token of DAO). The rest of the parameters will come from the config.
-
-#### Test the geyser parameters using confirmGeyserParams() script
-
-
-## Bringing Users into the system
-The system is 'live' once BASE and WETH are added to the uniswap pool. At that point, anyone can buy BASE tokens and stake the LP tokens in the Geyser to farm gBase.
-
-Before this happens, a few things should be configured
-
-#### Configure Oracles w/ Data sources
-Initial oracles will be centralized, with Chainlink integration hopefully down the line.
+#### Transfer all BASE tokens
+The Deployer will deposit all BASE tokens to the DAO Finance App through the Aragon UI. This will register the BASE token in the UI
 
 #### Allow contributors to request gBase
-Using the TokenRequestApp of the DAO, contributors can request gBase tokens for ETH. This ETH will be used to seed initial liquidity in the Uniswap Pool, along with the BASE tokens.
-
-(Note: Ensure ETH goes to the DAO Finance app)
+Using the TokenRequestApp of the DAO, contributors can request gBase tokens, and optionally offer ETH for this request. This ETH will be used to seed initial liquidity in the Uniswap Pool, along with the BASE tokens.
 
 #### Deploy Liquidity
-Send the LP tokens back to the individual contributors pro-rata via proposals, rather than stake it in Geyser directly. Contributors can then stake their LP tokens to farm gBase individually.
+Use the DAO Agent console to put ETH & BASE into the Uniswap Pool.
+
+##### Approve Uniswap Router to use BASE tokens.
+```
+act/<agent>/<baseToken>/approve(address: <uniswapV2Router>
+ , uint256: <baseAmount>)
+```
+
+##### Add liquidity to Uniswap Pool via router.
+```
+act/<agent>/<uniswapV2Router>/addLiquidityETH(address: <baseToken>, uint256: <baseAmount>, uint256: 0, uint256: 0, address: <agent>, uint256: <deadline>)/<ethAmount>
+```
+
+The LP tokens will be sent back to the DAO. It's presumed the DAO will not stake it's own LP tokens in Geyser to harvest gBase.
+
+#### Send gBase to Geyser
+The Deployer now sends the bulk of gBase (75% of total supply) to the Geyser. Once the gBase is deployed to the geyser, it will have a 75% voting capacity.
+There's a 20% threshold, so initially the DAO will need high participateion to get things done.
+
+>⚠️ This needs to be done after the liquidity provision actions, because once the Deployer no longer controls >50% of the voting rights, actions cannot be taken immediately and must wait for the DAO voting period (1 week)
+
+If it's ok to wait a week for Liquidity & Geyser to be live, these operations can happen via the DAO in a more trustless manner.
+Unfortunately the DAO cannot change it's voting period after Deploy.
+
+#### Run the tranferOwnership() script
+This will transfer ownership of all contracts from the **Deployer** to the **DAO Agent**.
 
 ## Final Checks
-Ensure the ProxyAdmin for the upgradable contracts (BaseToken, SupplyPolicy) belongs to the DAO Agent!
+Send the ProxyAdmin for the upgradable contracts (BaseToken, SupplyPolicy) to the DAO Agent!
+
+//TODO Aragon Command Tempales
+//TODO Diagrams
+
+
