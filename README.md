@@ -1,5 +1,5 @@
 # rebase-architecture
-The Rebase protocol is a DAO owned system with a token that adjusts supply to meet a BTC peg.
+The Rebase protocol is a DAO owned system with a token that adjusts supply to meet a BTC peg. Check out the following resources to learn more.
 
 - [System overview](/Overview.md)
 - [Deployment guide](/Deploy.md)
