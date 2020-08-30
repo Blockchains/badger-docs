@@ -102,7 +102,6 @@ Unfortunately the DAO cannot change it's voting period after Deploy.
 #### Run the tranferOwnership() script
 This will transfer ownership of all contracts from the **Deployer** to the **DAO Agent**.
 
-
 ## Final Checks
 Send the ProxyAdmin for the upgradable contracts (BaseToken, SupplyPolicy) to the DAO Agent!
 
@@ -110,3 +109,5 @@ Send the ProxyAdmin for the upgradable contracts (BaseToken, SupplyPolicy) to th
 //TODO Diagrams
 
 
+### Governance System Modifications
+```dao exec <dao-addr> <voting-app-proxy-addr>  changeSupportRequiredPct  desiredPercentage```

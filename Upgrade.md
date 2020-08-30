@@ -1,6 +1,8 @@
 # Upgrade Paths
 
-## Rebase Core
+![Upgrade](/images/badger-upgrades.png)
+
+## Digg Core
 **uFragments** & **uFragmentsSupply** use OZ Proxy + Logic, implementation can be upgraded by DAO. 
 
 Every other contract in the system can be changed via admin function, ultimately starting from these two contracts.
@@ -12,8 +14,8 @@ Changed in **uFragmentsSupply**:
 
 Each oracle can set it's data sources via admin function.
 
-## Rebase Geyser
-The Geyser is not upgradable, this is the intent of the system - it's a promise of releasing tokens over time according to the preset schedule. 
+## Distribution Pools (Geysers)
+The Geysers are not upgradable, this is the intent of the system - it's a promise of releasing tokens over time according to the preset schedule. 
 
 However, given that the token itself & rest of the system can be changed it does not actually provide any decentralization guarentee.
 

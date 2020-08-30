@@ -11,7 +11,7 @@ The BASE token is governed by the Base DAO, an Aragon DAO with a transferrable g
 | *Vote Duration* | Length of time that the vote will be open for participation. For example, if the Vote Duration is set to 7 days, then token holders have 7 days to participate in the vote. | 7 days |
 
 ## Apps
-BASE DAO uses the following Apps:
+BADGER Finance DAO uses the following Aragon Apps:
 
 - **[Voting](https://github.com/aragon/aragon-apps/tree/master/apps/voting)**: Used to create and participate in votes. Votes can be linked to an action, such as minting gBASE or transferring funds, or be purely informative.
 
