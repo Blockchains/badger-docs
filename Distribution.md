@@ -1,7 +1,7 @@
 # Token Distribution
 There will be a 21 day staking period in which $BADGER tokens are released, followed by a 21 day staking period in which $DIGG tokens are released.
 
-Within each staking period, there will be series of tranches to distribute the token, each lasting 3-7 days. The amount of tokens released per day will be weighted towards the front, with less tokens being distributed per day as the staking period progresses. 
+Within the staking period, there will be series of tranches to distribute the token, each lasting 3-7 days. The amount of tokens released per day will be weighted towards the front, with less tokens being distributed per day as the staking period progresses. 
 
 Each tranche will also add new assets that can be staked. More details on staking pools and tranches can be found below.
 
