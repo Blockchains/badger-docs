@@ -16,7 +16,7 @@ The system can be logically divided into the following components
 - [**Updater Service**](./Assistant.md) External service to ensure required data updates for the Digg system (oracle date, rebases) occur when appropriate.
 
 # System Architecture
-![Architecture](/images/badger-architecture.png)
+![Architecture](/images/badger-finance.png)
 
 ## Further reading
 - [Deployment scripts](https://github.com/Badger-Finance/badger-deploy)
