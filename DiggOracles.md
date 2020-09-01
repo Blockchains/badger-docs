@@ -20,10 +20,10 @@ A trustless [ConstantOracle](https://github.com/Badger-Finance/digg-oracles/blob
 ## System Overview
 ![Oracles](/images/badger-oracles.png)
 
-- MarketMedianOracle: the entry point of the rebase actions, can forward notifications of the rebase to other contracts
-- CpiMedianOracle: Unused in the Digg system, always returning one
-- Centralized Oracle: External,trusted service that publishes market data to the MarketMedianOracle via a Gnosis safe
-- ConstantOracle: Trustless Oracle that always returns 1 to the CpiMedianOracle
+- MarketMedianOracle: On-chain source of truth for DIGG/BTC price.
+- CpiMedianOracle: Unused in the Digg system, always returning one.
+- Centralized Oracle: External,trusted service that publishes market data to the MarketMedianOracle via a Gnosis safe.
+- ConstantOracle: Trustless Oracle that always returns 1 to the CpiMedianOracle.
 
 ## Centralized Market Oracle Details
 * The centralized oracle is a Gnosis safe.
