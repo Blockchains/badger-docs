@@ -3,16 +3,15 @@ There will be a 21 day staking period in which $BADGER tokens are released, foll
 
 Within each staking period, there will be series of tranches to distribute the token, each lasting 3-7 days. The amount of tokens released per day will be weighted towards the front, with less tokens being distributed per day as the staking period progresses. 
 
-However, each tranche will add new assets that can be staked. More details on staking pools and tranches can be found below.
+Each tranche will also add new assets that can be staked. More details on staking pools and tranches can be found below.
 
 The distribution mechanics are realized in code via the deployment [config](https://github.com/Badger-Finance/badger-deploy/blob/develop/deploy/badgerConfig.ts) file.
-
 
 # BADGER Distribution
 There will be a total of 21 million $BADGER tokens. 
 
-- Half of the $BADGER total supply will be allocated throughout various staking pools over a period of 21 days..
-- The remaining half of $BADGER tokens will be locked, and given to the DAO itself after thirty days. The DAO governance process will determine how to allocate these tokens. 
+- Half of the $BADGER total supply will be allocated throughout various staking pools over a period of 21 days.
+- The remaining half of $BADGER tokens will be locked for 30 days from the start of the staking period, and be able to be claimed by the DAO after this period. The DAO governance process will determine how to allocate these tokens. 
 
 ### Tranche 1 
 - Amount of Badger to unlock = 6M 
