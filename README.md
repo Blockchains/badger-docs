@@ -19,5 +19,6 @@ The system can be logically divided into the following components
 ![Architecture](/images/badger-finance.png)
 
 ## Further reading
+- [Security considerations](/Security.md)
 - [Deployment scripts](https://github.com/Badger-Finance/badger-deploy)
 - [System upgrade notes](/Upgrade.md)
