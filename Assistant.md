@@ -6,7 +6,7 @@ Two things need to happen:
 - Updated market data reports need to be pushed to the CpiMedianOracle and MarketMedianOracle.
 - Rebase needs to be called on the Orchestrator.
 
-The flow of actions looks like this. The 'person' components represent off-chain actions.
+The flow of actions within the system looks like this. The 'person' components represent off-chain actions. First, updated data is pushed to the oracles. Then, the rebase can occur.
 ![Action flow](/images/digg-system.png)
 
 ## How do we know when to rebase?
